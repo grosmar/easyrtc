@@ -41,7 +41,13 @@ declare type Easyrtc_StatsCallback = (easyrtcId:string, values:{
 
 declare type Easyrtc_PeerMessageDestination = string | Easyrtc_MessageTargeting;
 
-declare type Easyrtc_RedundantMap = { [key:string]:{fieldName:string, fieldValue:string}};
+declare type Easyrtc_RedundantMap = { [key:string]:Easyrtc_RedundantMapValue };
+
+declare interface Easyrtc_RedundantMapValue 
+{
+	fieldName:string;
+	fieldValue:string;
+}
 
 declare interface Easyrtc_RatesOptions {
     audioRecvCodec ?: string;

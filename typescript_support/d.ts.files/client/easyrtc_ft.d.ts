@@ -26,13 +26,14 @@ declare type Easyrtc_ft_acceptRejectCB = (otherguy:string, filenamelist:string[]
 
 declare type Easyrtc_ft_blobAcceptor = (otherguy:string, blob:Blob, filename:string)=>void;
 
+declare interface Easyrtc_ft_errorCodes {
+    DATA_LOST: string;
+    INVALID_DATA: string;
+    DROP_FILE: string;
+}
 
 declare var easyrtc_ft: {
-    errorCodes: {
-        DATA_LOST: string,
-        INVALID_DATA: string,
-        DROP_FILE: string
-    },
+    errorCodes: Easyrtc_ft_errorCodes;
 
     /**
      * Establish an area as a drag-n-drop drop site for files.
